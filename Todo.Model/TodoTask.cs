@@ -13,6 +13,6 @@ namespace Todo.Model
         public string Description { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime DueDate { get; set; }
-
+        public TodoTaskStatus Status { get; set; }
     }
 }

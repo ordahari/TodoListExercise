@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<Todo.Model.TodoTask>
-
+@{
+    Layout = null;
+}
 
 <h2>All Tasks</h2>
 
 
-<table class="table">
+@*table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CreatedDate)
@@ -19,28 +21,27 @@
             @Html.DisplayNameFor(model => model.DueDate)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
+@foreach (var item in Model)
+{
+    <div class="row">
+       
+        <div class="col-xs-12 col-md-11" style="border-width:1px;border-style: solid; border-color: rgba(0, 0, 0, 0.5);">
             @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
+         <h2>   @Html.DisplayFor(modelItem => item.Title)</h2>
             @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+            <div style="text-align: right">
+                Due: @Html.DisplayFor(modelItem => item.DueDate)
+            </div>
+        </div>
+      
+
+      
+
+
+
+    </div>
 }
 
-</table>
+
