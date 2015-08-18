@@ -18,5 +18,22 @@ namespace ToDoList.Controllers
 
             return View(tasks);
         }
+
+        public ActionResult CreateTask()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateTask(TodoTask task)
+        {
+            if (ModelState.IsValid)
+            {
+                TasksBL.CreateTask(task);
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
     }
 }

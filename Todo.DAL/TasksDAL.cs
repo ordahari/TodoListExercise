@@ -11,7 +11,19 @@ namespace Todo.DAL
     {
         public static IEnumerable<TodoTask> GetTasks()
         {
-            throw new NotImplementedException();
+            using (TodoContext ctx = new TodoContext())
+            {
+                return ctx.Tasks.ToList();
+            }
+        }
+
+        public static void CreateTask(TodoTask task)
+        {
+            using (TodoContext ctx = new TodoContext())
+            {
+                ctx.Tasks.Add(task);
+                ctx.SaveChanges();
+            }
         }
     }
 }

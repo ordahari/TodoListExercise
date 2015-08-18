@@ -14,5 +14,11 @@ namespace Todo.BL
         {
             return TasksDAL.GetTasks();
         }
+
+        public static void CreateTask(TodoTask task)
+        {
+            task.CreatedDate = DateTime.Now;
+            TasksDAL.CreateTask(task);
+        }
     }
 }
