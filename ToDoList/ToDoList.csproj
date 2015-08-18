@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,6 +224,7 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Tasks\AllTasks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -235,8 +237,12 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Todo.Model\Todo.Model.csproj">
-      <Project>{b496b14e-b9fa-4793-a798-c62b4285d892}</Project>
+    <ProjectReference Include="..\Todo.BL\Todo.BL.csproj">
+      <Project>{acde1768-ca24-46fa-84cf-250940e8815f}</Project>
+      <Name>Todo.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Todo.Model\Todo.Model.csproj">
+      <Project>{5b610d55-e046-4177-8f6a-c43c61acb565}</Project>
       <Name>Todo.Model</Name>
     </ProjectReference>
   </ItemGroup>
